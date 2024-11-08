@@ -1,0 +1,37 @@
+interface types {
+    //use jabratech:common/types.{pair, currency, option-kind, side, option-type, payout-ccy, instrument-kind, counterparty, user};
+
+    /** 
+     * Record representing an error result
+     * - error-code: an error code for validation
+     * - error-msg: description of error
+     */
+    record error {
+      error-code: s16,
+      error-msg: string
+    }
+
+    record portfolio-request {
+      counterparty: string,
+      currency: string
+    }
+
+    record portfolio-response {
+      currencies: list<currencies-data>,
+      total-available-balance: f64,
+      total-equity: f64,
+      total-live-pnl: f64,
+      total-realized-pnl: f64
+    }
+
+    record currencies-data {
+      available-balance: f64,
+      balance: f64,
+      currency: string,
+      equity: f64,
+      equity-usd: f64,
+      exercised-balances: f64,
+      interest-payments: f64,
+      live-pnl: f64
+    } 
+}

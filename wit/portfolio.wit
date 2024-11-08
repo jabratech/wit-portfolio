@@ -1,0 +1,4 @@
+interface portfolio-handler {    
+    use types.{portfolio-request, portfolio-response, error};
+    get-portfolio: func(request: portfolio-request) -> result<portfolio-response, error>;
+  }
